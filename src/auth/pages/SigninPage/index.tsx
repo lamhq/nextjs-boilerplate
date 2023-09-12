@@ -1,4 +1,4 @@
-import SignInForm from "../../organisms/SignInForm";
+import SignInForm from '../../organisms/SignInForm';
 
 export default function SignInPage() {
   return (
@@ -20,5 +20,5 @@ export default function SignInPage() {
         </div>
       </div>
     </>
-  )
+  );
 }

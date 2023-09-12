@@ -1,9 +1,9 @@
-import NextAuth, { AuthOptions } from "next-auth"
-import GithubProvider from "next-auth/providers/github"
-import CredentialsProvider from "next-auth/providers/credentials"
-import { validateCredentials } from "@/auth/utils"
+import NextAuth, { AuthOptions } from 'next-auth';
+import GithubProvider from 'next-auth/providers/github';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import { validateCredentials } from '@/auth/utils';
 
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
   // Configure one or more authentication providers
   providers: [
     GithubProvider({
@@ -12,16 +12,16 @@ export const authOptions: AuthOptions = {
     }),
     CredentialsProvider({
       id: 'credentials',
-      name: "Username & password",
+      name: 'Username & password',
       credentials: {
-        username: { label: "Username", type: "email" },
-        password: { label: "Password", type: "password" }
+        username: { label: 'Username', type: 'email' },
+        password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
         const user = await validateCredentials(credentials);
         return user;
-      }
-    })
+      },
+    }),
   ],
   callbacks: {
     async signIn({ user }) {
@@ -29,13 +29,13 @@ export const authOptions: AuthOptions = {
         return false;
       }
       return true;
-    }
+    },
   },
   pages: {
     signIn: '/auth/signin',
-  }
-}
+  },
+};
 
-const handler = NextAuth(authOptions)
+const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };

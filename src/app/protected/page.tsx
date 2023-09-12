@@ -1,4 +1,4 @@
-import { getServerSession } from 'next-auth'
+import { getServerSession } from 'next-auth';
 
 export default async function Protected() {
   const session = await getServerSession();
@@ -6,7 +6,5 @@ export default async function Protected() {
     throw new Error('Not authenticated');
   }
 
-  return (
-    <>This is a protected page</>
-  )
+  return <>This is a protected page</>;
 }

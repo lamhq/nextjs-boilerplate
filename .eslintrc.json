@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+
+    // report typescript errors
+    "plugin:@typescript-eslint/recommended",
+
+    // report prettier errors
+    "plugin:prettier/recommended"
+  ]
 }
