@@ -1,7 +1,7 @@
 "use client"
 import { useForm, SubmitHandler } from "react-hook-form";
 import { signIn } from "next-auth/react"
-import { Credentials } from "@/app/auth/types";
+import { Credentials } from "@/auth/types";
 import { useSearchParams } from 'next/navigation'
 import cx from 'clsx';
 
