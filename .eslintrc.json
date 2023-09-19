@@ -7,5 +7,9 @@
 
     // report prettier errors
     "plugin:prettier/recommended"
-  ]
+  ],
+  "rules": {
+    // Reports if a resolved path is imported more than once
+    "import/no-duplicates": ["error", {"prefer-inline": true}]
+  }
 }
